@@ -52,7 +52,7 @@ init_post_receive(){
     export PODI_REMOTE=$2
     export PODI_USER=$3
     export PODI_PORT=$4
-    export PODI_BRANCH=$4
+    export PODI_BRANCH=$5
     export PODI_APP=$(basename $(pwd))
     export PODI_COMMIT=\$(git --work-tree=$1 --git-dir=$1/.git log -n1 --pretty=format:\"%h\")
     cd $1
