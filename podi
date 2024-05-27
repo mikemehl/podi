@@ -1,4 +1,5 @@
 #!/bin/sh
+# TODO: In general, clean this all up. Add some better cli options.
 set -e
 required="awk ssh git hostname basename"
 test -z $HOST           && host=$USER@$(hostname) || host=$HOST
@@ -87,6 +88,7 @@ hello(){
 \e[0m'
 }
 
+# TODO: Name argument isn't used. Can we set that up to be the app/remote name?
 init(){ # init git@server:/dir/to/deploy [branch] [port] [name] : initializes a deployment 
   echo "$1" | silent grep ":" || usage
   test -z $1 && usage 
